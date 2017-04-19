@@ -5,13 +5,14 @@
   "author": "ahyahya <mrfool38@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w app.js -w nuxt.config.js app.js",
+    "dev": "nodemon -w app.js -w nuxt.config.js -w api.js -w store -w config app.js",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node app.js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "cross-env": "^3.1.4",
     "koa": "^2.0.0",
     "koa-router": "^7.1.1",

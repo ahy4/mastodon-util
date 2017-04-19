@@ -1,18 +1,22 @@
 <template>
   <section class="container">
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      Universal Vue.js Application Framework
-    </h1>
-    <nuxt-link class="button" to="/about">
-      About page
-    </nuxt-link>
+    あああ{{JSON.stringify($store.state.toots.toots, null, '  ')}}
+    <div class="toots">
+      <toot v-for="toot in $store.state.toots.toots" :data="data"></toot>
+    </div>
   </section>
 </template>
 
 <style scoped>
-.title
-{
-  margin: 50px 0;
-}
 </style>
+
+<script>
+import Toot from '~components/toot.vue'
+
+export default {
+  components: { Toot },
+  async fetch ({store}) {
+    await store.dispatch('toots/fetch')
+  }
+}
+</script>
