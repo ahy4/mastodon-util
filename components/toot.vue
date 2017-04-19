@@ -2,7 +2,7 @@
 url, reblogs_count, favourites_count, content -->
 
 <template>
-  <div class="toot">
+  <div v-on:click="location.href=data.url" class="toot">
     <div class="toot-account">
       <div class="icon">
         <img :src="data.account.avatar_static" alt="" height="60" width="60">
@@ -35,7 +35,11 @@ url, reblogs_count, favourites_count, content -->
 }
 .toot {
   border-top: 1px solid #ddd;
-  padding: 20px 0;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+.toot:hover {
+  background: rgba(0,0,0,0.04);
 }
 .icon img {
   border-radius: 4px;
